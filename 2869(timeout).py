@@ -3,7 +3,7 @@ import sys
 
 A, B, V = map(int,sys.stdin.readline().split())
 
-# (A-B) * n+ A = V,  n= (V-A)/(A-B)
+# (A-B) * n+ A >= V,  n>= (V-A)/(A-B)
 
 if (V-A)%(A-B) == 0:
     print(int((V-A)/(A-B))+1) # 
