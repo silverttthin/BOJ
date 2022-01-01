@@ -1,3 +1,3 @@
 # BOJ  
 
-EoJJeolTV JoJJeolTV
+쉬운거부터 
