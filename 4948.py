@@ -1,4 +1,4 @@
-import sys, math
+import sys
 sys.stdin=open("input.txt", "rt")
 # 베르트랑 공준 : 임의의 자연수 n에 대해 (n,2n]의 범위 내에 소수는 적어도 한 개 이상 존재.
 
@@ -8,6 +8,8 @@ sys.stdin=open("input.txt", "rt")
 
 # 에라토스테네스의 체는 2x까지 만들어야함. range(2x+1)
 # 이후 2x까지 소수들을 걸러내고 n 초과 2n 이하의 범위 내의 소수 개수 카운트
+
+# +) 제곱근 연산 시 math.sqrt말고 **0.5로도 구현 가능
 def checker(x: int) -> int:
     if x == 0: return -1
     cnt = 0
@@ -15,14 +17,14 @@ def checker(x: int) -> int:
     array[0]=False
     array[1]=False
 
-    for i in range(2, int(math.sqrt(2*x)) + 1):
+    for i in range(2, int((2*x)**0.5) + 1):
         if array[i]==True:
             for j in range(i*2, 2*x + 1, i): array[j] = False
     
     for i in range(x+1, 2*x+1):
         if array[i] == True: cnt+=1
     return cnt
-    
+
 while(1):
     cnt = checker(int(input()))
     if cnt<0: exit()
